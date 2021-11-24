@@ -17,3 +17,6 @@
 
 ![Ekranlocalstorge Alıntısı](https://user-images.githubusercontent.com/58472240/143254394-24d26b39-2426-4cc6-9e90-216233e4e4f5.PNG)
 
+
+Links: https://www.udemy.com/course/angular-dersleri/
+https://getbootstrap.com/docs/4.0/utilities/colors/
