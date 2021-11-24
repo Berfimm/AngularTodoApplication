@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 mx-auto">
+      <h3 class="bg-info text-white p-3" style="text-align:center">
+
+        {{getName()}}'s Todo List
+      </h3>
+      <!--Add section--><!--(blur)="addItem(txtItem.value);txtItem.value =''"-->
+      
+      <div class="input-group mb-3">
+        <input
+               [(ngModel)]="inputText"
+               #txtItem type="text" class="form-control"
+               (keyup.enter)="addItem();" />
+        <!--<input [(ngModel)]="message"
+               [(ngModel)]="inputText"
+               #txtItem type="text" class="form-control"
+               (keyup.enter)="addItem(txtItem.value);txtItem.value =''" />-->
+        <button [class.disabled]="inputText.length==0"
+                class="btn btn-outline-primary"
+                (click)="addItem();inputText =''">
+          Add
+        </button>
+      </div>
+      {{message}}
+      <!--Checkbox Section-->
+      <div class="form-check mb-3">
+        <input type="checkbox" [(ngModel)]="displayAll" style="color:red" class="form-check-input" name="" id="displayAll"  />
+        <label for="displayAll" class="form-check-label">DisplayAll</label>
+      </div>
+      <div class="my-2">
+        {{displayCount()}} todos are done.
+      </div>
+      <div class="alert alert-warning" *ngIf="getItems().length == 0 else itemsTable">
+        There is no todo.
+      </div>
+
+      <ng-template #itemsTable>
+        <table class="table table-bordered" >
+          <thead>
+            <tr>
+              <th></th>
+              <th>Description</th>
+              <th>Action</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!--[class.bg-light]="item.action" [class.bg-secondary]="!item.action"-->
+            <tr *ngFor="let item of getItems(); let i = index;" [class]="{'bg-light': item.action, 'bg-secondary':!item.action}">
+              <td>{{i+1}}</td>
+              <td>{{item.description}}</td>
+              <td>
+                <!--IF -->
+                <!--<div *ngIf="item.action">Yes</div>
+      <div *ngIf="!item.action">No</div>-->
+                <!--SWITCH-->
+                <!--<div [ngSwitch]="item.action">
+        <div *ngSwitchCase="true">Yes</div>
+        <div *ngSwitchCase="false">No</div>
+      </div>-->
+                <!--IF THEN -->
+                <!--<div *ngIf="item.action; then noTemplate">
+        Yes
+      </div>
+      <ng-template #noTemplate>
+        No
+      </ng-template>-->
+                <!---IF ELSE -->
+                <div *ngIf="item.action; else noTemplate">
+                  Yes
+                </div>
+                <ng-template #noTemplate>
+                  No
+                </ng-template>
+
+              </td>
+              <td>
+                <input type="checkbox" (change)="onActionChanged(item)" [(ngModel)]="item.action" name="" id="" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
+      <!--table-->
+      <!--<table class="table table-bordered" *ngIf="getItems().length > 0">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Description</th>
+            <th>Action</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of getItems(); let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{item.description}}</td>
+            <td>-->
+              <!--<div *ngIf="item.action">Yes</div>
+          <div *ngIf="!item.action">No</div>-->
+              <!--<div [ngSwitch]="item.action">
+                <div *ngSwitchCase="true">Yes</div>
+                <div *ngSwitchCase="false">No</div>
+              </div>
+
+            </td>
+            <td>
+              <input type="checkbox" [(ngModel)]="item.action" name="" id="" />
+            </td>
+          </tr>
+        </tbody>
+      </table>-->
+
+
+
+    </div>
+  </div>
+</div>
