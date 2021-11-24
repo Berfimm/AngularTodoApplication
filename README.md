@@ -19,4 +19,5 @@
 
 
 Links: https://www.udemy.com/course/angular-dersleri/
+
 https://getbootstrap.com/docs/4.0/utilities/colors/
