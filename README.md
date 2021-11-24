@@ -9,7 +9,7 @@
 
 ![Ekran Alıntısfsfsdfdsı](https://user-images.githubusercontent.com/58472240/143254340-606cd576-c2a0-41ab-8049-449ad4ea38d7.PNG)
 
-**Only shows Status is No todos when unchecked DisplayAll checkbox**
+**Only shows 'Status is No' todos when unchecked DisplayAll checkbox**
 
 ![Ekran AlıntısnodisplayAllı](https://user-images.githubusercontent.com/58472240/143254378-fb529b82-8307-43a5-98b4-afcc477a8617.PNG)
 
